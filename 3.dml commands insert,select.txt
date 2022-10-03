@@ -1,0 +1,60 @@
+mysql> create database info;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use info;
+Database changed
+mysql> create table info(stdid int(10),stdname char(10),gender char(5),phone int(10),year int(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc info;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| stdid   | int(10)  | YES  |     | NULL    |       |
+| stdname | char(10) | YES  |     | NULL    |       |
+| gender  | char(5)  | YES  |     | NULL    |       |
+| phone   | int(10)  | YES  |     | NULL    |       |
+| year    | int(10)  | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into info values(13,'vijay','m','2030303','2000'),(14,'seetha','f','938838','1934');
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select*from info;
++-------+---------+--------+---------+------+
+| stdid | stdname | gender | phone   | year |
++-------+---------+--------+---------+------+
+|    12 | raj     | m      |  923923 | 2003 |
+|    13 | vijay   | m      | 2030303 | 2000 |
+|    14 | seetha  | f      |  938838 | 1934 |
++-------+---------+--------+---------+------+
+3 rows in set (0.00 sec)
+mysql> select*from info;
++-------+---------+--------+---------+------+
+| stdid | stdname | gender | phone   | year |
++-------+---------+--------+---------+------+
+|    12 | raj     | m      |  923923 | 2003 |
+|    13 | vijay   | m      | 2030303 | 2000 |
+|    14 | seetha  | f      |  938838 | 1934 |
++-------+---------+--------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> select stdname from info;
++---------+
+| stdname |
++---------+
+| raj     |
+| vijay   |
+| seetha  |
++---------+
+3 rows in set (0.00 sec)
+
+mysql> select*from info where stdname='vijay';
++-------+---------+--------+---------+------+
+| stdid | stdname | gender | phone   | year |
++-------+---------+--------+---------+------+
+|    13 | vijay   | m      | 2030303 | 2000 |
++-------+---------+--------+---------+------+
+1 row in set (0.01 sec)
