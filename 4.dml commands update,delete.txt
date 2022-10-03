@@ -1,0 +1,44 @@
+mysql> create table info(stnid int(10),stname char(10),gender char,phone int(10),year int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> insert into info values(1,'vijay','m','99929229','2003'),(2,'ajay','m','29320','2000'),(3,'rani','f','02020','2003');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select*from info;
++-------+--------+--------+----------+------+
+| stnid | stname | gender | phone    | year |
++-------+--------+--------+----------+------+
+|     1 | vijay  | m      | 99929229 | 2003 |
+|     2 | ajay   | m      |    29320 | 2000 |
+|     3 | rani   | f      |     2020 | 2003 |
++-------+--------+--------+----------+------+
+3 rows in set (0.00 sec)
+
+mysql> delete from info
+    -> where stnid=1;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from info;
++-------+--------+--------+-------+------+
+| stnid | stname | gender | phone | year |
++-------+--------+--------+-------+------+
+|     2 | ajay   | m      | 29320 | 2000 |
+|     3 | rani   | f      |  2020 | 2003 |
++-------+--------+--------+-------+------+
+2 rows in set (0.00 sec)
+
+mysql> update info
+    -> set phone='934534033'
+    -> where stnid=2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from info;
++-------+--------+--------+-----------+------+
+| stnid | stname | gender | phone     | year |
++-------+--------+--------+-----------+------+
+|     2 | ajay   | m      | 934534033 | 2000 |
+|     3 | rani   | f      |      2020 | 2003 |
++-------+--------+--------+-----------+------+
+2 rows in set (0.00 sec)
