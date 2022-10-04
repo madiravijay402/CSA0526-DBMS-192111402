@@ -1,0 +1,71 @@
+mysql> use info;
+Database changed
+mysql> select*from info;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    1 | vjay  | maths   |    93 | s     |
+|    2 | ram   | dbms    |    86 | a     |
+|    3 | madhu | pdsd    |    76 | b     |
++------+-------+---------+-------+-------+
+3 rows in set (0.01 sec)
+
+mysql> select*from info
+    -> order by subject;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    2 | ram   | dbms    |    86 | a     |
+|    1 | vjay  | maths   |    93 | s     |
+|    3 | madhu | pdsd    |    76 | b     |
++------+-------+---------+-------+-------+
+3 rows in set (0.01 sec)
+
+mysql> select*from info order by marks;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    3 | madhu | pdsd    |    76 | b     |
+|    2 | ram   | dbms    |    86 | a     |
+|    1 | vjay  | maths   |    93 | s     |
++------+-------+---------+-------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select*from info group by slno;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    1 | vjay  | maths   |    93 | s     |
+|    2 | ram   | dbms    |    86 | a     |
+|    3 | madhu | pdsd    |    76 | b     |
++------+-------+---------+-------+-------+
+3 rows in set (0.00 sec)
+mysql> select*from info group by grade;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    2 | ram   | dbms    |    86 | a     |
+|    3 | madhu | pdsd    |    76 | b     |
+|    1 | vjay  | maths   |    93 | s     |
++------+-------+---------+-------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select*from info
+    -> group by marks
+    -> having marks>80;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    2 | ram   | dbms    |    86 | a     |
+|    1 | vjay  | maths   |    93 | s     |
++------+-------+---------+-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select*from info
+    -> having marks>90;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    1 | vjay  | maths   |    93 | s     |
++------+-------+---------+-------+-------+
+1 row in set (0.00 sec)
