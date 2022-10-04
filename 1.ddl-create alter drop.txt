@@ -1,0 +1,98 @@
+mysql> create database person;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use person;
+Database changed
+mysql> create table person(name char(10),regno int(10),dob int(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc person;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| name  | char(10) | YES  |     | NULL    |       |
+| regno | int(10)  | YES  |     | NULL    |       |
+| dob   | int(10)  | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> alter table person add result int;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc person;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| name   | char(10) | YES  |     | NULL    |       |
+| regno  | int(10)  | YES  |     | NULL    |       |
+| dob    | int(10)  | YES  |     | NULL    |       |
+| result | int(11)  | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> alter table person drop column regno;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc person;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| name   | char(10) | YES  |     | NULL    |       |
+| dob    | int(10)  | YES  |     | NULL    |       |
+| result | int(11)  | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> desc val;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| stno   | int(11)  | NO   | PRI | NULL    |       |
+| stname | char(10) | YES  |     | NULL    |       |
+| sal    | float    | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into val values(13,'vijay',4000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from val;
++------+--------+------+
+| stno | stname | sal  |
++------+--------+------+
+|   12 | vasu   | 5000 |
+|   13 | vijay  | 4000 |
++------+--------+------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
