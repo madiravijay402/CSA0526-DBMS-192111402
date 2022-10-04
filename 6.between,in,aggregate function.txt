@@ -1,0 +1,84 @@
+mysql> select*from info;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    1 | vjay  | maths   |    93 | s     |
+|    2 | ram   | dbms    |    86 | a     |
+|    3 | madhu | pdsd    |    76 | b     |
++------+-------+---------+-------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select*from info
+    -> where subject IN('dbms','maths');
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    1 | vjay  | maths   |    93 | s     |
+|    2 | ram   | dbms    |    86 | a     |
++------+-------+---------+-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select*from info
+    -> where subject BETWEEN 'maths' and 'dbms';
+Empty set (0.00 sec)
+
+mysql> select*from info
+    -> where subject between 'maths' and 'pdsd';
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    1 | vjay  | maths   |    93 | s     |
+|    3 | madhu | pdsd    |    76 | b     |
++------+-------+---------+-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select*from info
+    -> where subject not between 'maths' and 'pdsd';
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    2 | ram   | dbms    |    86 | a     |
++------+-------+---------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select count(subject) from info;
++----------------+
+| count(subject) |
++----------------+
+|              3 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(marks)as total_sum from info;
++-----------+
+| total_sum |
++-----------+
+|       255 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select max(marks) from info;
++------------+
+| max(marks) |
++------------+
+|         93 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select min(marks) from info;
++------------+
+| min(marks) |
++------------+
+|         76 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(marks) from marks;
+ERROR 1146 (42S02): Table 'info.marks' doesn't exist
+mysql> select avg(marks) from info;
++------------+
+| avg(marks) |
++------------+
+|    85.0000 |
++------------+
+1 row in set (0.00 sec)

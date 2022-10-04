@@ -1,0 +1,59 @@
+mysql> create table info(slno int(10),sname char(10),subject char(10),marks int(10),grade char(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc info;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| slno    | int(10)  | YES  |     | NULL    |       |
+| sname   | char(10) | YES  |     | NULL    |       |
+| subject | char(10) | YES  |     | NULL    |       |
+| marks   | int(10)  | YES  |     | NULL    |       |
+| grade   | char(10) | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into info values(1,'vjay','maths','93','s'),(2,'ram','dbms','86','a'),(3,'madhu','pdsd','76','b');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> desc info;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| slno    | int(10)  | YES  |     | NULL    |       |
+| sname   | char(10) | YES  |     | NULL    |       |
+| subject | char(10) | YES  |     | NULL    |       |
+| marks   | int(10)  | YES  |     | NULL    |       |
+| grade   | char(10) | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> select*from info;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    1 | vjay  | maths   |    93 | s     |
+|    2 | ram   | dbms    |    86 | a     |
+|    3 | madhu | pdsd    |    76 | b     |
++------+-------+---------+-------+-------+
+3 rows in set (0.00 sec)
+
+
+mysql> select*from info where slno=2;
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    2 | ram   | dbms    |    86 | a     |
++------+-------+---------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select*from info where grade='a';
++------+-------+---------+-------+-------+
+| slno | sname | subject | marks | grade |
++------+-------+---------+-------+-------+
+|    2 | ram   | dbms    |    86 | a     |
++------+-------+---------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql>
