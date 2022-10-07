@@ -1,0 +1,32 @@
+mysql> use student;
+Database changed
+mysql> create table student(p_id int(10),name char(10),age int(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> inserrt into student values(1,'surya',43),(2,'vijay',49),(3,'ajith',56);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'inserrt into student values(1,'surya',43),(2,'vijay',49),(3,'ajith',56)' at line 1
+mysql> insert into student values(1,'vijay','19'),(2,'raju','21'),(3,'maari','25');
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select*from student;
++------+-------+------+
+| p_id | name  | age  |
++------+-------+------+
+|    1 | vijay |   19 |
+|    2 | raju  |   21 |
+|    3 | maari |   25 |
++------+-------+------+
+3 rows in set (0.00 sec)
+
+mysql> select repeat(name,2) from student;
++----------------+
+| repeat(name,2) |
++----------------+
+| vijayvijay     |
+| rajuraju       |
+| maarimaari     |
++----------------+
+3 rows in set (0.00 sec)
+
+mysql>
